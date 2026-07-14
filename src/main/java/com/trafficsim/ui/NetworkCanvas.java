@@ -17,27 +17,31 @@ import javafx.scene.layout.Pane;
  *   how close to their desired speed they are.
  * - Highlighting whatever's currently selected in the editor.
  */
-public class NetworkCanvas extends Pane {
+public class NetworkCanvas extends Pane
+{
 
     private final Canvas canvas = new Canvas();
     private final RoadNetworkEditor editor;
     private final SimulationEngine engine;
 
-    public NetworkCanvas(RoadNetworkEditor editor, SimulationEngine engine) {
+    public NetworkCanvas(RoadNetworkEditor editor, SimulationEngine engine)
+    {
         this.editor = editor;
         this.engine = engine;
         getChildren().add(canvas);
         canvas.widthProperty().bind(widthProperty());
         canvas.heightProperty().bind(heightProperty());
 
-        setOnMouseClicked(e -> {
+        setOnMouseClicked(e ->
+        {
             editor.handleClick(e.getX(), e.getY());
             render();
         });
     }
 
     /** TODO: clear the canvas and redraw roads, intersections, lights and vehicles. */
-    public void render() {
+    public void render()
+    {
         // no-op for now — nothing to draw yet.
     }
 }

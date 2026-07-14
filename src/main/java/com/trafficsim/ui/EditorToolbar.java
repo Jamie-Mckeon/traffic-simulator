@@ -8,9 +8,11 @@ import javafx.scene.layout.HBox;
  * TODO: top toolbar — switch the editor's tool (select / place intersection / draw road /
  * delete), play/pause and reset the simulation, and control how much traffic is generated.
  */
-public class EditorToolbar extends HBox {
+public class EditorToolbar extends HBox
+{
 
-    public EditorToolbar(RoadNetworkEditor editor, SimulationEngine engine, Runnable onReset) {
+    public EditorToolbar(RoadNetworkEditor editor, SimulationEngine engine, Runnable onReset)
+    {
         // TODO: build toolbar controls and wire them to the editor/engine.
     }
 }

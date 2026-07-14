@@ -19,10 +19,12 @@ import javafx.stage.Stage;
  * - a JavaFX {@code AnimationTimer} calling the engine's step method and re-rendering the
  *   canvas once per frame
  */
-public class MainApp extends Application {
+public class MainApp extends Application
+{
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage)
+    {
         BorderPane root = new BorderPane();
         root.setCenter(new Label("Traffic Simulator"));
 
@@ -32,7 +34,8 @@ public class MainApp extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         launch(args);
     }
 }

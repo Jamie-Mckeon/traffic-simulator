@@ -11,7 +11,8 @@ import java.util.List;
  * mostly just hold state (position, speed, route) and know how to integrate one step given an
  * acceleration value handed to it.
  */
-public class Vehicle {
+public class Vehicle
+{
 
     private final int id;
     private final List<Road> route;
@@ -22,7 +23,8 @@ public class Vehicle {
 
     private final double spawnTimeSeconds;
 
-    public Vehicle(int id, List<Road> route, double spawnTimeSeconds) {
+    public Vehicle(int id, List<Road> route, double spawnTimeSeconds)
+    {
         this.id = id;
         this.route = route;
         this.currentRoad = route.get(0);
@@ -31,41 +33,50 @@ public class Vehicle {
         // acceleration/deceleration, following gap/headway) — fixed, random, or configurable?
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public Road getCurrentRoad() {
+    public Road getCurrentRoad()
+    {
         return currentRoad;
     }
 
-    public double getPositionMeters() {
+    public double getPositionMeters()
+    {
         return positionMeters;
     }
 
-    public double getSpeedMps() {
+    public double getSpeedMps()
+    {
         return speedMps;
     }
 
-    public double getSpawnTimeSeconds() {
+    public double getSpawnTimeSeconds()
+    {
         return spawnTimeSeconds;
     }
 
-    public boolean hasNextRoad() {
+    public boolean hasNextRoad()
+    {
         return routeIndex + 1 < route.size();
     }
 
-    public Road peekNextRoad() {
+    public Road peekNextRoad()
+    {
         return hasNextRoad() ? route.get(routeIndex + 1) : null;
     }
 
     /** TODO: update speedMps/positionMeters given one timestep of the given acceleration. */
-    public void integrate(double accelerationMps2, double dtSeconds) {
+    public void integrate(double accelerationMps2, double dtSeconds)
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 
     /** TODO: move this vehicle onto route.get(++routeIndex), carrying over overshoot distance. */
-    public void advanceToNextRoad(double overshootMeters) {
+    public void advanceToNextRoad(double overshootMeters)
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 }

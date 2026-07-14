@@ -9,11 +9,13 @@ import javafx.scene.layout.VBox;
  * intersection. Listen to {@link RoadNetworkEditor#selectionProperty()} and rebuild the panel's
  * contents whenever the selection changes.
  */
-public class PropertiesPanel extends VBox {
+public class PropertiesPanel extends VBox
+{
 
     private final RoadNetworkEditor editor;
 
-    public PropertiesPanel(RoadNetworkEditor editor, Runnable onChange) {
+    public PropertiesPanel(RoadNetworkEditor editor, Runnable onChange)
+    {
         this.editor = editor;
         // TODO: build the initial (empty) UI and listen for selection changes.
     }

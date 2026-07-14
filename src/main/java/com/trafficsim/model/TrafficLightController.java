@@ -13,32 +13,42 @@ import java.util.List;
  *   green (yellow time, all-red time) so vehicles don't collide?
  * - How is per-approach green duration configured/edited from the UI?
  */
-public class TrafficLightController {
+public class TrafficLightController
+{
 
-    public enum LightState { RED, YELLOW, GREEN }
+    public enum LightState
+    {
+        RED, YELLOW, GREEN
+    }
 
-    public class ApproachLight {
+    public class ApproachLight
+    {
         private final Road road;
         private double greenDurationSeconds = 10.0;
 
-        private ApproachLight(Road road) {
+        private ApproachLight(Road road)
+        {
             this.road = road;
         }
 
-        public Road getRoad() {
+        public Road getRoad()
+        {
             return road;
         }
 
-        public double getGreenDurationSeconds() {
+        public double getGreenDurationSeconds()
+        {
             return greenDurationSeconds;
         }
 
-        public void setGreenDurationSeconds(double seconds) {
+        public void setGreenDurationSeconds(double seconds)
+        {
             this.greenDurationSeconds = seconds;
         }
 
         /** TODO: derive from the controller's current phase/timer state. */
-        public LightState getState() {
+        public LightState getState()
+        {
             throw new UnsupportedOperationException("TODO: implement");
         }
     }
@@ -46,24 +56,31 @@ public class TrafficLightController {
     private final Intersection intersection;
     private final List<ApproachLight> approaches = new ArrayList<>();
 
-    public TrafficLightController(Intersection intersection, List<Road> incomingRoads) {
+    public TrafficLightController(Intersection intersection, List<Road> incomingRoads)
+    {
         this.intersection = intersection;
-        for (Road road : incomingRoads) {
+        for (Road road : incomingRoads)
+        {
             approaches.add(new ApproachLight(road));
         }
     }
 
-    public Intersection getIntersection() {
+    public Intersection getIntersection()
+    {
         return intersection;
     }
 
-    public List<ApproachLight> getApproaches() {
+    public List<ApproachLight> getApproaches()
+    {
         return approaches;
     }
 
-    public ApproachLight approachFor(Road road) {
-        for (ApproachLight a : approaches) {
-            if (a.getRoad() == road) {
+    public ApproachLight approachFor(Road road)
+    {
+        for (ApproachLight a : approaches)
+        {
+            if (a.getRoad() == road)
+            {
                 return a;
             }
         }
@@ -71,7 +88,8 @@ public class TrafficLightController {
     }
 
     /** TODO: advance whatever phase/timer model you design by dtSeconds of simulated time. */
-    public void update(double dtSeconds) {
+    public void update(double dtSeconds)
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 }

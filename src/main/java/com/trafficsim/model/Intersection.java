@@ -10,7 +10,8 @@ import java.util.List;
  * light-controller of some kind governing which approach has right of way. Decide how you
  * want to represent that (a separate TrafficLightController class? a field on this class?).
  */
-public class Intersection {
+public class Intersection
+{
 
     private final int id;
     private double x;
@@ -18,29 +19,35 @@ public class Intersection {
     private final List<Road> incomingRoads = new ArrayList<>();
     private final List<Road> outgoingRoads = new ArrayList<>();
 
-    public Intersection(int id, double x, double y) {
+    public Intersection(int id, double x, double y)
+    {
         this.id = id;
         this.x = x;
         this.y = y;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public double getX() {
+    public double getX()
+    {
         return x;
     }
 
-    public double getY() {
+    public double getY()
+    {
         return y;
     }
 
-    public List<Road> getIncomingRoads() {
+    public List<Road> getIncomingRoads()
+    {
         return incomingRoads;
     }
 
-    public List<Road> getOutgoingRoads() {
+    public List<Road> getOutgoingRoads()
+    {
         return outgoingRoads;
     }
 

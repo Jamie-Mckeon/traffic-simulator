@@ -6,5 +6,6 @@ package com.trafficsim.simulation;
  * time. A trailing time window (rather than an all-time total) will make throughput reflect
  * current conditions rather than the whole run.
  */
-public class SimulationStats {
+public class SimulationStats
+{
 }

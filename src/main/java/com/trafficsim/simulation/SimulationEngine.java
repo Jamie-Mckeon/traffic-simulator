@@ -19,43 +19,52 @@ import java.util.List;
  *
  * Intended to be called once per frame (e.g. from a JavaFX AnimationTimer) with the elapsed time.
  */
-public class SimulationEngine {
+public class SimulationEngine
+{
 
     private final RoadNetwork network;
     private final List<Vehicle> vehicles = new ArrayList<>();
     private final SimulationStats stats = new SimulationStats();
     private boolean running = false;
 
-    public SimulationEngine(RoadNetwork network) {
+    public SimulationEngine(RoadNetwork network)
+    {
         this.network = network;
     }
 
-    public RoadNetwork getNetwork() {
+    public RoadNetwork getNetwork()
+    {
         return network;
     }
 
-    public List<Vehicle> getVehicles() {
+    public List<Vehicle> getVehicles()
+    {
         return vehicles;
     }
 
-    public SimulationStats getStats() {
+    public SimulationStats getStats()
+    {
         return stats;
     }
 
-    public boolean isRunning() {
+    public boolean isRunning()
+    {
         return running;
     }
 
-    public void setRunning(boolean running) {
+    public void setRunning(boolean running)
+    {
         this.running = running;
     }
 
-    public void reset() {
+    public void reset()
+    {
         vehicles.clear();
     }
 
     /** TODO: advance the simulation by dtSeconds — see class doc for the steps involved. */
-    public void step(double dtSeconds) {
+    public void step(double dtSeconds)
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 }

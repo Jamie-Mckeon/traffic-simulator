@@ -9,7 +9,8 @@ import java.util.List;
  * TODO: decide whether a bidirectional street is one Road or two (probably two, one per
  * direction, sharing the same pair of intersections).
  */
-public class Road {
+public class Road
+{
 
     public static final double DEFAULT_SPEED_LIMIT_KPH = 50;
     public static final int DEFAULT_LANES = 1;
@@ -23,57 +24,69 @@ public class Road {
 
     private final List<Vehicle> vehicles = new ArrayList<>();
 
-    public Road(int id, Intersection start, Intersection end) {
+    public Road(int id, Intersection start, Intersection end)
+    {
         this.id = id;
         this.start = start;
         this.end = end;
         // TODO: register this road with start/end Intersection (see Intersection TODOs).
     }
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public Intersection getStart() {
+    public Intersection getStart()
+    {
         return start;
     }
 
-    public Intersection getEnd() {
+    public Intersection getEnd()
+    {
         return end;
     }
 
-    public double getSpeedLimitKph() {
+    public double getSpeedLimitKph()
+    {
         return speedLimitKph;
     }
 
-    public void setSpeedLimitKph(double speedLimitKph) {
+    public void setSpeedLimitKph(double speedLimitKph)
+    {
         this.speedLimitKph = speedLimitKph;
     }
 
-    public int getLanes() {
+    public int getLanes()
+    {
         return lanes;
     }
 
-    public void setLanes(int lanes) {
+    public void setLanes(int lanes)
+    {
         this.lanes = lanes;
     }
 
-    public List<Vehicle> getVehicles() {
+    public List<Vehicle> getVehicles()
+    {
         return vehicles;
     }
 
     /** TODO: compute from the distance between start and end intersections. */
-    public double getLengthMeters() {
+    public double getLengthMeters()
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 
     /** TODO: return the vehicle immediately ahead of {@code position} on this road, or null. */
-    public Vehicle findLeader(double positionMeters) {
+    public Vehicle findLeader(double positionMeters)
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 
     /** TODO: expose whatever light/phase state governs entry into {@code end}, or null if none. */
-    public Object getApproachLight() {
+    public Object getApproachLight()
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 }

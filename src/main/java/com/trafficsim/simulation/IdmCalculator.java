@@ -10,16 +10,19 @@ import com.trafficsim.model.Vehicle;
  * Worth reading up on before implementing — the formula alone won't make sense without the
  * intuition behind it.
  */
-public final class IdmCalculator {
+public final class IdmCalculator
+{
 
-    private IdmCalculator() {
+    private IdmCalculator()
+    {
     }
 
     /**
      * @param gapMeters distance to whatever is ahead, or {@link Double#POSITIVE_INFINITY} if clear
      * @param obstacleSpeedMps speed of whatever is ahead (0 for a red light); ignored if gap is infinite
      */
-    public static double computeAcceleration(Vehicle vehicle, double gapMeters, double obstacleSpeedMps) {
+    public static double computeAcceleration(Vehicle vehicle, double gapMeters, double obstacleSpeedMps)
+    {
         throw new UnsupportedOperationException("TODO: implement");
     }
 }

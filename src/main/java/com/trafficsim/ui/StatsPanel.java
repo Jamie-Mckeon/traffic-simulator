@@ -8,13 +8,16 @@ import javafx.scene.layout.VBox;
  * JavaFX {@code LineChart} could show throughput over time so the effect of light-timing or
  * speed-limit changes on flow is visible rather than just implied.
  */
-public class StatsPanel extends VBox {
+public class StatsPanel extends VBox
+{
 
-    public void update(SimulationStats stats) {
+    public void update(SimulationStats stats)
+    {
         // TODO: refresh labels/chart from the latest stats.
     }
 
-    public void reset() {
+    public void reset()
+    {
         // TODO: clear any accumulated chart history.
     }
 }
