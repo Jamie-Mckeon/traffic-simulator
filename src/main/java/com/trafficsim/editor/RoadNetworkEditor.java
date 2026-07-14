@@ -1,8 +1,7 @@
 package com.trafficsim.editor;
 
 import com.trafficsim.model.RoadNetwork;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import com.trafficsim.util.Observable;
 
 /**
  * TODO: translate canvas clicks into edits on a {@link RoadNetwork}: placing intersections,
@@ -15,8 +14,8 @@ import javafx.beans.property.SimpleObjectProperty;
 public class RoadNetworkEditor {
 
     private final RoadNetwork network;
-    private final ObjectProperty<EditorMode> mode = new SimpleObjectProperty<>(EditorMode.SELECT);
-    private final ObjectProperty<Selection> selection = new SimpleObjectProperty<>(Selection.NONE);
+    private final Observable<EditorMode> mode = new Observable<>(EditorMode.SELECT);
+    private final Observable<Selection> selection = new Observable<>(Selection.NONE);
 
     public RoadNetworkEditor(RoadNetwork network) {
         this.network = network;
@@ -26,11 +25,11 @@ public class RoadNetworkEditor {
         return network;
     }
 
-    public ObjectProperty<EditorMode> modeProperty() {
+    public Observable<EditorMode> modeProperty() {
         return mode;
     }
 
-    public ObjectProperty<Selection> selectionProperty() {
+    public Observable<Selection> selectionProperty() {
         return selection;
     }
 

@@ -26,7 +26,13 @@ src/main/java/com/trafficsim/
   simulation/   IdmCalculator, SimulationEngine, SimulationStats
   editor/       RoadNetworkEditor, EditorMode, Selection
   ui/           MainApp, NetworkCanvas, EditorToolbar, PropertiesPanel, StatsPanel
+  util/         Observable (a tiny framework-agnostic property/listener type)
 ```
+
+`model`, `simulation`, `editor`, and `util` have no JavaFX imports — only `ui` does. That's
+intentional: if this ever grows a web front end, the simulation engine and editing logic should
+be reusable as-is behind a different UI (e.g. a web backend exposing them over REST/WebSocket),
+rather than rewritten.
 
 ## Running it
 
