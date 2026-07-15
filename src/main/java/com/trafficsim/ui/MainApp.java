@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  * works end to end.
  *
  * TODO: this is where everything gets wired together. Roughly:
- * - a {@code com.trafficsim.model.RoadNetwork} holding the roads/intersections
+ * - a {@code com.trafficsim.model.RoadNetwork} holding the roads/junctions
  * - a {@code com.trafficsim.editor.RoadNetworkEditor} wrapping it for click-to-edit
  * - a {@code com.trafficsim.simulation.SimulationEngine} driving vehicles forward
  * - a {@link NetworkCanvas} in the centre, an {@link EditorToolbar} on top, and a

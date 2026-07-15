@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * A junction in the road network. Connects two or more {@link Road}s.
  *
- * TODO: once an intersection has 2+ incoming roads, it should own a traffic light /
+ * TODO: once a junction has 2+ incoming roads, it should own a traffic light /
  * light-controller of some kind governing which approach has right of way. Decide how you
  * want to represent that (a separate TrafficLightController class? a field on this class?).
  */
-public class Intersection
+public class Junction
 {
 
     private final int id;
@@ -19,7 +19,7 @@ public class Intersection
     private final List<Road> incomingRoads = new ArrayList<>();
     private final List<Road> outgoingRoads = new ArrayList<>();
 
-    public Intersection(int id, double x, double y)
+    public Junction(int id, double x, double y)
     {
         this.id = id;
         this.x = x;
@@ -52,7 +52,7 @@ public class Intersection
     }
 
     // TODO: package-private hooks for Road to call when it connects/disconnects from this
-    // intersection (e.g. registerIncoming / registerOutgoing / unregisterRoad).
+    // junction (e.g. registerIncoming / registerOutgoing / unregisterRoad).
 
     // TODO: hasTrafficLight() / getLightController() once you've designed the light model.
 }

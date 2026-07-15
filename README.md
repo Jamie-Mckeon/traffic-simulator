@@ -1,7 +1,7 @@
 # Traffic Simulator
 
 A JavaFX desktop application for building and simulating road traffic networks: place
-intersections and roads, set per-road speed limits and lane counts, configure traffic lights,
+junctions and roads, set per-road speed limits and lane counts, configure traffic lights,
 and watch vehicles navigate the network.
 
 Planned to start as a JavaFX desktop app, then get a web front end later.
@@ -22,7 +22,7 @@ model/simulation/UI logic is still to be written (see the `TODO`s throughout `sr
 
 ```
 src/main/java/com/trafficsim/
-  model/        Road, Intersection, Vehicle, TrafficLightController, RoadNetwork
+  model/        Road, Junction, Vehicle, TrafficLightController, RoadNetwork
   simulation/   IdmCalculator, SimulationEngine, SimulationStats
   editor/       RoadNetworkEditor, EditorMode, Selection
   ui/           MainApp, NetworkCanvas, EditorToolbar, PropertiesPanel, StatsPanel
@@ -48,9 +48,9 @@ mvn test
 
 ## Roadmap
 
-- [ ] Road network editor: place/select intersections and roads on a canvas
+- [ ] Road network editor: place/select junctions and roads on a canvas
 - [ ] Per-road speed limits and lane counts, editable from a properties panel
 - [ ] Traffic lights with configurable per-approach timing
-- [ ] Vehicle simulation (car-following model, routing between intersections)
+- [ ] Vehicle simulation (car-following model, routing between junctions)
 - [ ] Live stats overlay (throughput, average speed, queue lengths)
 - [ ] Web version

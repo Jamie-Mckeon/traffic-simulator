@@ -4,7 +4,7 @@ package com.trafficsim.editor;
 public enum EditorMode
 {
     SELECT,
-    ADD_INTERSECTION,
+    ADD_JUNCTION,
     ADD_ROAD,
     DELETE
 }

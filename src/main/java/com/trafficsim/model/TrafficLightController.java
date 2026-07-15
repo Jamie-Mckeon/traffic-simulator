@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TODO: design the state machine for right-of-way at an intersection with 2+ incoming roads.
+ * TODO: design the state machine for right-of-way at a junction with 2+ incoming roads.
  *
  * Some questions to work through:
  * - How many approaches can be green at once (just one, generalising to any junction shape;
  *   or fixed phase pairs like a real 4-way crossroads)?
  * - What clearance intervals do you need between one approach going red and the next going
- *   green (yellow time, all-red time) so vehicles don't collide?
+ *   green (amber time, all-red time) so vehicles don't collide?
  * - How is per-approach green duration configured/edited from the UI?
  */
 public class TrafficLightController
@@ -18,7 +18,7 @@ public class TrafficLightController
 
     public enum LightState
     {
-        RED, YELLOW, GREEN
+        RED, AMBER, GREEN
     }
 
     public class ApproachLight
@@ -53,21 +53,21 @@ public class TrafficLightController
         }
     }
 
-    private final Intersection intersection;
+    private final Junction junction;
     private final List<ApproachLight> approaches = new ArrayList<>();
 
-    public TrafficLightController(Intersection intersection, List<Road> incomingRoads)
+    public TrafficLightController(Junction junction, List<Road> incomingRoads)
     {
-        this.intersection = intersection;
+        this.junction = junction;
         for (Road road : incomingRoads)
         {
             approaches.add(new ApproachLight(road));
         }
     }
 
-    public Intersection getIntersection()
+    public Junction getJunction()
     {
-        return intersection;
+        return junction;
     }
 
     public List<ApproachLight> getApproaches()

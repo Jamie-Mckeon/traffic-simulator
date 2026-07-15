@@ -12,7 +12,7 @@ import javafx.scene.layout.Pane;
  * Some things worth thinking about:
  * - Roads as lines (thickness could reflect lane count), with a direction arrow and a speed
  *   limit label.
- * - Intersections as circles; if one has a traffic light, indicate each approach's colour.
+ * - Junctions as circles; if one has a traffic light, indicate each approach's colour.
  * - Vehicles as small shapes positioned by interpolating along their current road, coloured by
  *   how close to their desired speed they are.
  * - Highlighting whatever's currently selected in the editor.
@@ -39,7 +39,7 @@ public class NetworkCanvas extends Pane
         });
     }
 
-    /** TODO: clear the canvas and redraw roads, intersections, lights and vehicles. */
+    /** TODO: clear the canvas and redraw roads, junctions, lights and vehicles. */
     public void render()
     {
         // no-op for now — nothing to draw yet.

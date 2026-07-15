@@ -4,9 +4,9 @@ import com.trafficsim.model.RoadNetwork;
 import com.trafficsim.util.Observable;
 
 /**
- * TODO: translate canvas clicks into edits on a {@link RoadNetwork}: placing intersections,
- * drawing roads between them (probably a two-click flow: click a start intersection, then an
- * end intersection), selecting elements for a properties panel, and deleting elements.
+ * TODO: translate canvas clicks into edits on a {@link RoadNetwork}: placing junctions,
+ * drawing roads between them (probably a two-click flow: click a start junction, then an
+ * end junction), selecting elements for a properties panel, and deleting elements.
  *
  * Worth keeping this independent of JavaFX rendering (it already only depends on the model
  * package) so the click-handling logic can be unit tested without a display.
