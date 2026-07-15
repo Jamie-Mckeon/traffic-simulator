@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * TODO: this is the heart of the simulation. Each call to {@link #step} should, for one small
  * fixed timestep:
- * 1. advance every intersection's traffic light state
+ * 1. advance every junction's traffic light state
  * 2. work out an acceleration for every vehicle (checking the vehicle/light ahead of it)
  * 3. integrate every vehicle's position/speed by that acceleration
  * 4. hand vehicles off onto their next road when they reach the end of the current one
- *    (respecting red/yellow lights), or remove them once they reach their destination
+ *    (respecting red/amber lights), or remove them once they reach their destination
  * 5. spawn new vehicles onto the network at some rate
  * 6. update {@link SimulationStats}
  *

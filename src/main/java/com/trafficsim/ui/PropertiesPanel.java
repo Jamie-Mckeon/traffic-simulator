@@ -5,8 +5,8 @@ import javafx.scene.layout.VBox;
 
 /**
  * TODO: side panel showing editable properties for whatever is currently selected on the
- * canvas — speed limit and lane count for a road, or per-approach green-light timing for an
- * intersection. Listen to {@link RoadNetworkEditor#selectionProperty()} and rebuild the panel's
+ * canvas — speed limit and lane count for a road, or per-approach green-light timing for a
+ * junction. Listen to {@link RoadNetworkEditor#selectionProperty()} and rebuild the panel's
  * contents whenever the selection changes.
  */
 public class PropertiesPanel extends VBox

@@ -1,22 +1,22 @@
 package com.trafficsim.editor;
 
-import com.trafficsim.model.Intersection;
+import com.trafficsim.model.Junction;
 import com.trafficsim.model.Road;
 
 /** The single currently-selected network element, if any. Exactly one of {@link #road()} /
- *  {@link #intersection()} is non-null, or both are null for "nothing selected". */
+ *  {@link #junction()} is non-null, or both are null for "nothing selected". */
 public final class Selection
 {
 
     public static final Selection NONE = new Selection(null, null);
 
     private final Road road;
-    private final Intersection intersection;
+    private final Junction junction;
 
-    private Selection(Road road, Intersection intersection)
+    private Selection(Road road, Junction junction)
     {
         this.road = road;
-        this.intersection = intersection;
+        this.junction = junction;
     }
 
     public static Selection ofRoad(Road road)
@@ -24,14 +24,14 @@ public final class Selection
         return new Selection(road, null);
     }
 
-    public static Selection ofIntersection(Intersection intersection)
+    public static Selection ofJunction(Junction junction)
     {
-        return new Selection(null, intersection);
+        return new Selection(null, junction);
     }
 
     public boolean isEmpty()
     {
-        return road == null && intersection == null;
+        return road == null && junction == null;
     }
 
     public Road road()
@@ -39,8 +39,8 @@ public final class Selection
         return road;
     }
 
-    public Intersection intersection()
+    public Junction junction()
     {
-        return intersection;
+        return junction;
     }
 }
