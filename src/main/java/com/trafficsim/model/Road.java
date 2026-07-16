@@ -87,7 +87,7 @@ public class Road
         throw new UnsupportedOperationException("TODO: implement");
     }
 
-    /** TODO: expose whatever light/phase state governs entry into {@code end}, or null if none. */
+    /** TODO: expose whaqtever light/phase state governs entry into {@code end}, or null if none. */
     public Object getApproachLight()
     {
         throw new UnsupportedOperationException("TODO: implement");
