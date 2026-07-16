@@ -1,8 +1,11 @@
 package com.trafficsim.ui;
 
+import com.trafficsim.editor.RoadNetworkEditor;
+import com.trafficsim.model.Junction;
+import com.trafficsim.model.RoadNetwork;
+import com.trafficsim.simulation.SimulationEngine;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -26,12 +29,44 @@ public class MainApp extends Application
     public void start(Stage stage)
     {
         BorderPane root = new BorderPane();
-        root.setCenter(new Label("Traffic Simulator"));
+
+        RoadNetwork network = new RoadNetwork();
+        seedDemoNetwork(network);
+        RoadNetworkEditor roadNetworkEditor = new RoadNetworkEditor(network);
+        SimulationEngine simulationEngine = new SimulationEngine(network);
+        NetworkCanvas networkCanvas = new NetworkCanvas(roadNetworkEditor, simulationEngine);
+        EditorToolbar editorToolbar = new EditorToolbar(roadNetworkEditor, simulationEngine, () -> simulationEngine.reset());
+
+        root.setCenter(networkCanvas);
+        networkCanvas.render();
+        editorToolbar.setPrefWidth(200);
+        root.setTop(editorToolbar);
 
         Scene scene = new Scene(root, 1200, 800);
         stage.setTitle("Traffic Simulator");
         stage.setScene(scene);
         stage.show();
+
+
+    }
+
+    /**
+     * Places a small four-way crossroads so the app opens with something to look at, rather
+     * than an empty canvas.
+     */
+    private void seedDemoNetwork(RoadNetwork network)
+    {
+        var centre = network.addJunction(600, 400);
+        var north = network.addJunction(600, 150);
+        var south = network.addJunction(600, 650);
+        var east = network.addJunction(950, 400);
+        var west = network.addJunction(250, 400);
+
+        for (Junction outer : new Junction[]{north, south, east, west})
+        {
+            network.addRoad(outer, centre);
+            network.addRoad(centre, outer);
+        }
     }
 
     public static void main(String[] args)

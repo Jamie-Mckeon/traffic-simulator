@@ -3,6 +3,7 @@ package com.trafficsim.ui;
 import com.trafficsim.editor.RoadNetworkEditor;
 import com.trafficsim.simulation.SimulationEngine;
 import javafx.scene.layout.HBox;
+import javafx.scene.control.Button;
 
 /**
  * TODO: top toolbar — switch the editor's tool (select / place junction / draw road /
@@ -13,6 +14,9 @@ public class EditorToolbar extends HBox
 
     public EditorToolbar(RoadNetworkEditor editor, SimulationEngine engine, Runnable onReset)
     {
-        // TODO: build toolbar controls and wire them to the editor/engine.
+        Button resetButton = new Button("Reset");
+        resetButton.setOnAction(e -> onReset.run());
+
+        getChildren().add(resetButton);
     }
 }
