@@ -9,10 +9,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Owns every {@link Junction} and {@link Road} in the simulated network.
  * <p>
- * TODO: this is the natural home for graph algorithms the rest of the app needs:
- * - hit-testing (which junction/road is near a given canvas point, for the editor)
- * - routing (shortest/fastest path between two junctions, for vehicle spawning)
- * - reachability (which junctions can a vehicle actually get to from here)
+ * Also home to the graph algorithms the rest of the app needs. Hit-testing (which
+ * junction/road is near a given canvas point, for the editor) is done. Still to come:
+ * routing (shortest/fastest path between two junctions, for vehicle spawning) and
+ * reachability (which junctions can a vehicle actually get to from here).
  */
 public class RoadNetwork
 {
@@ -60,7 +60,9 @@ public class RoadNetwork
     }
 
     /**
-     * TODO: find the junction within {@code radius} pixels of (x, y), if any.
+     * Finds the junction closest to (x, y), as long as it's within {@code radius} pixels.
+     * If more than one junction is in range, returns whichever is closest rather than just
+     * the first one found. Empty if nothing is close enough.
      */
     public Optional<Junction> junctionNear(double x, double y, double radius)
     {
@@ -84,7 +86,10 @@ public class RoadNetwork
     }
 
     /**
-     * TODO: find the road whose segment passes within {@code tolerance} pixels of (x, y).
+     * Finds the road passing closest to (x, y), as long as it's within {@code tolerance}
+     * pixels. Measures the actual distance to the nearest point on each road's segment
+     * (not just its endpoints), so a click near the middle of a road still counts, not just
+     * one near either end. Empty if nothing is close enough.
      */
     public Optional<Road> roadNear(double x, double y, double tolerance)
     {
