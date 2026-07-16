@@ -72,7 +72,7 @@ public class Road
         return vehicles;
     }
 
-    /** TODO: compute from the distance between start and end junctions. */
+    /** Straight-line distance between this road's start and end junctions, in metres. */
     public double getLengthMeters()
     {
         double xDifference = this.start.getX() - this.end.getX();
